@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Random Number Generator</title>
+        <link rel="stylesheet" href="random.css">
+        <script lang="javascript">
+            function roll() {
+                var min = parseInt(document.getElementById("min").value);
+                var max = parseInt(document.getElementById("max").value);
+                document.getElementById("number").innerText = Math.floor(Math.random() * max) + min;
+            }
+        </script>
+    </head>
+    <body onload="roll();">
+        <div class="container">
+            <span id="number" class="number" onclick="roll();"></span>
+            <div class="range">
+                <div >
+                    <label for="min">Min:</label>
+                    <input id="min" type="number" min="1" max="100" step="1" value="1">
+                </div>
+
+                <div>
+                    <label for="max">Max:</label>
+                    <input id="max" type="number" min="1" max="100" step="1" value="100">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
